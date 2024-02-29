@@ -1,0 +1,91 @@
+<footer>
+  <div id="sign-up">
+    <span>Sign-Up for Threedles News</span>
+    <!-- <span class="divider">|</span> -->
+    <button id="sign-up-btn">Sign Up</button>
+  </div>
+  <div id="contact">
+    <span>Contact</span>
+    <!-- <span class="divider">|</span> -->
+    <a href="">Email | example@shop.com</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    font-family: "Italianno", cursive;
+    display: flex;
+    color: #420039;
+    background-color: #f6f2ff;
+    /* margin-top: 1rem; */
+    padding: 1rem 0;
+  }
+  div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #sign-up {
+    border-right: #420039 2px solid;
+  }
+  #contact {
+  }
+  span {
+    font-size: 3rem;
+  }
+  img {
+    transform: rotate(65deg);
+  }
+  button {
+    background-color: transparent;
+    color: #420039;
+    border: 2px solid #420039;
+    border-radius: 1rem;
+    padding: 0.25rem 2rem;
+    font-size: 1.8rem;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+  }
+  button:hover {
+    border: 2px solid transparent;
+  }
+  a {
+    color: #420039;
+    font-size: 1.8rem;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  @media (max-width: 1000px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+    }
+    #sign-up {
+      border: none;
+    }
+    .divider {
+      display: none;
+    }
+    span {
+      margin: 0 1rem;
+    }
+  }
+  @media (max-width: 575px) {
+    span {
+      font-size: 2rem;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById("sign-up-btn");
+  btn.addEventListener("click", () => {
+    alert("Sign Up not implemented on Demo Site.");
+  });
+</script>

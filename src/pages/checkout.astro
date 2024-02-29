@@ -1,0 +1,154 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+---
+
+<Layout>
+  <Banner />
+  <main>
+    <h1>Checkout - Demo</h1>
+    <div id="container">
+      <div class="item">
+        <img src="/images/x.svg" alt="Remove Icon" class="x" />
+        <img
+          src="/images/designs/12MoC_April.jpg"
+          alt="April Design"
+          class="img"
+        />
+        <div class="text-box">
+          <p class="bold">April</p>
+          <p>Original</p>
+        </div>
+        <div class="text-box">
+          <p>Chart</p>
+          <p class="bold">$20</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/images/x.svg" alt="Remove Icon" class="x" />
+        <img
+          src="/images/designs/CatsEyes_CleopatrasEyes.png"
+          alt="Cat's Eyes Design"
+          class="img"
+        />
+        <div class="text-box">
+          <p class="bold">Cat's Eyes</p>
+          <p>Cleopatra's Eyes</p>
+        </div>
+        <div class="text-box">
+          <p>Combo</p>
+          <p class="bold">$88</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/images/x.svg" alt="Remove Icon" class="x" />
+        <img
+          src="/images/designs/JessicaLane_Original.jpg"
+          alt="Jessica Lane Design"
+          class="img"
+        />
+        <div class="text-box">
+          <p class="bold">Jessica Lane</p>
+          <p>Original</p>
+        </div>
+        <div class="text-box">
+          <p>Chart</p>
+          <p class="bold">$44</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/images/x.svg" alt="Remove Icon" class="x" />
+        <img
+          src="/images/designs/SeasonalRays_Summer.png"
+          alt="Seasonal Rays Design"
+          class="img"
+        />
+        <div class="text-box">
+          <p class="bold">Seasonal Rays</p>
+          <p>Summer</p>
+        </div>
+        <div class="text-box">
+          <p>Chart</p>
+          <p class="bold">$28</p>
+        </div>
+      </div>
+      <h2>Total | $180</h2>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    color: #420039;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    font-family: "Italianno", cursive;
+    font-size: 4rem;
+    text-decoration: 3px solid #420039 underline;
+    text-underline-offset: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  #container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #420039;
+    padding: 1rem 0;
+  }
+  .x {
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+  .img {
+    width: 8rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+  .text-box {
+    font-size: 1.2rem;
+  }
+  .text-box:first-of-type {
+    margin-right: auto;
+    padding-left: 2rem;
+  }
+  .text-box:last-of-type {
+    text-align: right;
+  }
+  p {
+    padding: 0.5rem 0;
+  }
+  .bold {
+    font-weight: 900;
+  }
+  h2 {
+    text-align: right;
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  @media (max-width: 560px) {
+    .img {
+      width: 5rem;
+    }
+    .text-box {
+      font-size: 0.9rem;
+    }
+    .text-box:first-of-type {
+      padding-left: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  const x = document.querySelectorAll(".x");
+  x.forEach((x) => {
+    x.addEventListener("click", () => {
+      alert("Remove option not implemented in Demo Site");
+    });
+  });
+</script>

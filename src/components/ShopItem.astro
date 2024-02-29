@@ -1,0 +1,64 @@
+---
+const { design, price, colorNum, img } = Astro.props;
+---
+
+<div class="item-box">
+  <a href="/product">
+    <img src={img} alt={design + "Design"} />
+  </a>
+  <h1>{design}</h1>
+  <p>
+    <span>${price}</span> | {colorNum} Colorways
+  </p>
+  <a href="/product">
+    <button>Buy Now</button>
+  </a>
+</div>
+
+<style>
+  .item-box {
+    text-align: center;
+    color: #420039;
+    margin: 0 0.5rem;
+  }
+  img {
+    width: 18rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+    border-bottom: 1px solid #420039;
+    padding-bottom: 0.5rem;
+  }
+  h1 {
+    font-family: "Italianno", cursive;
+    font-size: 2rem;
+  }
+  p {
+  }
+  span {
+    font-weight: 700;
+  }
+  button {
+    margin: 1rem 0;
+    background-color: #932f6d;
+    color: white;
+    border: 2px solid #932f6d;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: white;
+    color: #932f6d;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 625px) {
+    .item-box {
+      margin: 0;
+    }
+    img {
+      width: 12rem;
+      border: none;
+    }
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import Showcase from "../components/Showcase.astro";
+import HomeProductRow from "../components/HomeProductRow.astro";
+import HomeProduct from "../components/HomeProduct.astro";
+import Comments from "../components/Comments.astro";
+---
+
+<Layout title="Threedles - Home">
+  <Banner />
+  <Showcase />
+  <HomeProductRow header="Featured Items">
+    <HomeProduct
+      design="Cat's Eyes"
+      img="/images/designs/CatsEyes_CleopatrasEyes.png"
+      price="55"
+      banner="New!"
+    />
+    <HomeProduct
+      design="April"
+      img="/images/designs/12MoC_April.jpg"
+      price="55"
+      banner="New!"
+    />
+    <HomeProduct
+      design="Mirror Mirror"
+      img="/images/designs/Mirror_CarribbeanSeas.png"
+      price="55"
+      banner="New!"
+    />
+    <HomeProduct
+      design="Jessica Lane"
+      img="/images/designs/JessicaLane_Original.jpg"
+      price="55"
+      banner="New!"
+    />
+  </HomeProductRow>
+  <HomeProductRow header="Best Sellers">
+    <HomeProduct
+      design="Seasonal Summer"
+      img="/images/designs/SeasonalRays_Summer.png"
+      price="55"
+      banner="Best Seller"
+    />
+    <HomeProduct
+      design="Hexefoos"
+      img="/images/designs/Hexefoos_Ephrata.png"
+      price="55"
+      banner="Best Seller"
+    />
+    <HomeProduct
+      design="Christmas 2012"
+      img="/images/designs/Xmas2012_GoldOnSandstone.png"
+      price="55"
+      banner="Best Seller"
+    />
+    <HomeProduct
+      design="February"
+      img="/images/designs/12MoC_February.jpg"
+      price="55"
+      banner="Best Seller"
+    />
+  </HomeProductRow>
+  <Comments />
+</Layout>

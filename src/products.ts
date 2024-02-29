@@ -1,0 +1,58 @@
+export const holiday = [
+  {
+    design: "All That Glitters",
+    price: 60,
+    colorNum: 4,
+    img: "/images/designs/AllThatGlitters_TealTreasures.png",
+    altImg: "/images/designs/AllThatGlitters_PolarIce.png",
+  },
+  {
+    design: "Christmas 2012",
+    price: 28,
+    colorNum: 3,
+    img: "/images/designs/Xmas2012_GoldOnSandstone.png",
+    altImg: "/images/designs/Xmas2012_BlueGreenOnWhite.png",
+  },
+  {
+    design: "Beads Cubed",
+    price: 36,
+    colorNum: 3,
+    img: "/images/designs/BeadsCubed_ChristmasElegance.png",
+    altImg: "/images/designs/BeadsCubed_WinterElegance.png",
+  },
+  {
+    design: "Crescents Only",
+    price: 28,
+    colorNum: 4,
+    img: "/images/designs/CresentsOnly_ChristmasOrnament.png",
+    altImg: "/images/designs/CresentsOnly_AntiqueSilk.png",
+  },
+  {
+    design: "February",
+    price: 20,
+    colorNum: 1,
+    img: "/images/designs/12MoC_February.jpg",
+    altImg: "/images/designs/12MoC_February.jpg",
+  },
+  {
+    design: "October",
+    price: 20,
+    colorNum: 1,
+    img: "/images/designs/12MoC_October.JPG",
+    altImg: "/images/designs/October.JPG",
+  },
+  {
+    design: "Christmas Whimsy",
+    price: 20,
+    colorNum: 1,
+    img: "/images/designs/ChristmasWhimsy_Christmas.png",
+    altImg: "/images/designs/ChristmasWhimsy_Christmas.png",
+  },
+  {
+    design: "Christmas 2020",
+    price: 36,
+    colorNum: 3,
+    img: "/images/designs/Xmas2020_TisTheSeason.png",
+    altImg: "/images/designs/Xmas2020_GoldenGifts.png",
+  },
+];

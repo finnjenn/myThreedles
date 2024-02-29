@@ -1,0 +1,24 @@
+---
+import ShopGrid from "../components/ShopGrid.astro";
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import { holiday } from "../products";
+---
+
+<Layout title="Threedles - 3D Designs">
+  <Banner />
+  <h1>Shop Demo - 3D Pieces</h1>
+  <ShopGrid products={holiday} />
+</Layout>
+
+<style>
+  h1 {
+    font-family: "Italianno", cursive;
+    color: #420039;
+    font-size: 3rem;
+    margin: 1rem;
+    text-align: center;
+    text-decoration: 3px solid #420039 underline;
+    text-underline-offset: 0.5rem;
+  }
+</style>

@@ -1,0 +1,225 @@
+---
+import Image from "astro/components/Image.astro";
+import logo from "../images/threedlesLogoTransparent.png";
+import dropdown from "../images/dropdown.webp";
+import cart from "../images/cart-icon.png";
+---
+
+<nav>
+  <button id="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
+    <span class="sr-only">Menu</span>
+  </button>
+  <a href="/" id="logo-link">
+    <Image src={logo} alt="Threedles Logo" id="nav-logo" width={125} />
+  </a>
+  <ul id="primary-nav" data-mobile-nav-visible="false">
+    <li><a class="nav-link" href="/">Home</a></li>
+    <li><a class="nav-link" href="/about">About</a></li>
+    <li id="shop-list-item">
+      <span class="nav-link"
+        >Shop
+        <Image
+          src={dropdown}
+          alt="Dropdown Icon"
+          id="dropdown-img"
+          width={15}
+        />
+      </span>
+      <ul id="dropdown-menu">
+        <li class="dropdown-item">
+          <a class="dropdown-link" href="/shopAll">Shop All</a>
+        </li>
+        <li class="dropdown-item">
+          <a class="dropdown-link" href="/holiday">Holiday</a>
+        </li>
+        <li class="dropdown-item">
+          <a class="dropdown-link" href="/beginner">Beginner Friendly</a>
+        </li>
+        <li class="dropdown-item">
+          <a class="dropdown-link" href="/advanced">Advanced Designs</a>
+        </li>
+        <li class="dropdown-item">
+          <a class="dropdown-link" href="/3D">3D Pieces</a>
+        </li>
+      </ul>
+    </li>
+    <li><a class="nav-link" href="/faq">FAQs</a></li>
+    <li><a class="nav-link" href="/videos">Videos</a></li>
+    <li id="cart-list-item">
+      <span class="sr-only">Cart</span>
+      <a href="/checkout" class="nav-link" style="border: none">
+        <button id="cart-btn">
+          <Image src={cart} alt="Cart Icon" width={30} />
+        </button>
+      </a>
+    </li>
+    <li>
+      <a href="#contact"><button id="contact-btn">Contact</button></a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  #nav-toggle {
+    display: none;
+  }
+  nav {
+    background-color: #f6f2ff;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  li {
+    cursor: pointer;
+    padding: 0 1rem;
+  }
+  a {
+    text-decoration: none;
+  }
+  #logo-link {
+    padding: 0.25rem 0;
+    padding-right: 2rem;
+  }
+  #primary-nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  .nav-link {
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.75rem;
+  }
+  .nav-link,
+  .dropdown-link {
+    color: #696969;
+  }
+  .nav-link:hover,
+  .dropdown-link:hover {
+    color: black;
+    border-color: black;
+  }
+  #shop-list-item {
+    transform: translateY(-1px);
+  }
+  #shop-list-item:hover #dropdown-menu,
+  #shop-list-item:active #dropdown-menu {
+    display: block;
+  }
+  #dropdown-img {
+    display: inline;
+    transform: translateY(2px);
+  }
+  #dropdown-menu {
+    display: none;
+    width: 11rem;
+    background-color: #f6f2ff;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0 0.5rem 0;
+  }
+  .dropdown-item {
+    padding: 0.75rem 0 0.75rem 1rem;
+  }
+  #cart-list-item {
+    margin-left: auto;
+  }
+  #cart-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+  }
+  #cart-btn:hover {
+    scale: 1.05;
+  }
+  #contact-btn {
+    background-color: #932f6d;
+    color: white;
+    border: 2px solid #932f6d;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+  }
+  #contact-btn:hover {
+    background-color: #f6f2ff;
+    color: #932f6d;
+  }
+  @media (max-width: 50rem) {
+    li {
+      padding: 1rem;
+    }
+    #nav-toggle {
+      display: block;
+      position: fixed;
+      top: 1rem;
+      right: 2rem;
+      background-image: url("/images/menu.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      background-color: transparent;
+      /* z-index: 99999; */
+    }
+    #nav-toggle[aria-expanded="true"] {
+      background-image: url("/images/x.svg");
+    }
+    #primary-nav {
+      z-index: 1000;
+      position: fixed;
+      inset: 0 0 0 30%;
+      background-color: #f6f2ff;
+      flex-direction: column;
+      margin-top: 4rem;
+      padding-top: 1rem;
+      transform: translateX(100%);
+      align-items: start;
+      transition: 500ms ease-in-out;
+    }
+    #primary-nav[data-mobile-nav-visible="true"] {
+      transform: translateX(0%);
+    }
+    #dropdown-menu {
+      top: 0;
+      left: 5rem;
+      border: 2px solid #696969;
+      padding: 0.25rem;
+    }
+    #dropdown-img {
+      transform: rotate(-90deg);
+      width: 0.75rem;
+    }
+    .dropdown-item {
+      padding: 0.5rem;
+    }
+    #cart-list-item {
+      margin-left: 0;
+    }
+  }
+</style>
+
+<script>
+  const primaryNav = document.querySelector("#primary-nav");
+  const navToggle = document.querySelector("#nav-toggle");
+  navToggle.addEventListener("click", () => {
+    console.log("nav toggle clicked");
+    const isNavVisible = primaryNav.getAttribute("data-mobile-nav-visible");
+    if (isNavVisible === "false") {
+      primaryNav.setAttribute("data-mobile-nav-visible", "true");
+      navToggle.setAttribute("aria-expanded", "true");
+    } else {
+      primaryNav.setAttribute("data-mobile-nav-visible", "false");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+</script>

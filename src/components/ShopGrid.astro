@@ -1,0 +1,25 @@
+---
+const { products } = Astro.props;
+import ShopItem from "../components/ShopItem.astro";
+---
+
+<section>
+  {
+    products.map((product) => (
+      <ShopItem
+        design={product.design}
+        price={product.price}
+        colorNum={product.colorNum}
+        img={product.img}
+      />
+    ))
+  }
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+</style>

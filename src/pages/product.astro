@@ -1,0 +1,238 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+---
+
+<Layout title="Threedles - Sample Product">
+  <Banner />
+  <section>
+    <div>
+      <img
+        src="/images/designs/CatsEyes_GaeasEyes.png"
+        alt="Cat's Eyes Design"
+        id="design"
+      />
+      <div id="color-box">
+        <div
+          class="color"
+          style="background-color: #37567d"
+          data-path="/images/designs/CatsEyes_CleopatrasEyes.png"
+          data-design="Cleopatra's Eyes"
+        >
+          Cleopatra's Eyes
+        </div>
+        <div
+          class="color"
+          style="background-color: #de5392"
+          data-path="/images/designs/CatsEyes_GaeasEyes.png"
+          data-design="Gaea's Eyes"
+        >
+          Gaea's Eyes
+        </div>
+        <div
+          class="color"
+          style="background-color: #932be2"
+          data-path="/images/designs/CatsEyes_VenusEyes.png"
+          data-design="Venus' Eyes"
+        >
+          Venus' Eyes
+        </div>
+      </div>
+      <p id="color-name">Gaea's Eyes</p>
+    </div>
+    <div>
+      <h1>Cat's Eyes - Sample Product</h1>
+      <h2>11" x 11"</h2>
+      <p>
+        Chart | <span>$48</span> Crystal Pack | <span>$48</span> Combo | <span
+          >$88</span
+        >
+      </p>
+      <label
+        >Product Type
+        <select name="type" id="type">
+          <option value="48">Chart</option>
+          <option value="48">Crystal Pack</option>
+          <option value="88">Combo</option>
+        </select>
+      </label>
+      <label
+        >Colorway
+        <select name="colorway" id="colorway">
+          <option
+            value="Cleopatra's Eyes"
+            data-path="/images/designs/CatsEyes_CleopatrasEyes.png"
+            >Cleopatra's Eyes</option
+          >
+          <option
+            selected
+            value="Gaea's Eyes"
+            data-path="/images/designs/CatsEyes_GaeasEyes.png"
+            >Gaea's Eyes</option
+          >
+          <option
+            value="Venus' Eyes"
+            data-path="/images/designs/CatsEyes_VenusEyes.png"
+            >Venus' Eyes</option
+          >
+        </select>
+      </label>
+      <button id="add-to-cart">Add To Cart</button>
+    </div>
+    <div id="description">
+      <h3>Description by the Designer</h3>
+      <p id="product-text">
+        This design draws its inspiration from an image within our kaleidoscope
+        collection. In this iteration, I aimed to infuse the design motifs with
+        interactivity while incorporating a rich array of threads and stitches.
+        I revel in crafting stitches that perfectly fit the intended aesthetic.
+        Additionally, the inclusion of beads and crystals brings a captivating
+        third dimension to the final piece.
+        <br />
+        <br />
+        The inaugural piece is christened <strong>Cleopatra</strong> owing to its
+        resemblance to cat's eyes and embellished jewels. Consequently, we coined
+        the design <strong>Cat's Eyes</strong> and assigned each colorway the name
+        of a renowned, somewhat mystical woman. This marks my third design, and it
+        remains my personal favorite.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section {
+    display: flex;
+    color: #420039;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  section > div {
+    padding: 0 1rem;
+  }
+  img {
+    width: 22rem;
+    aspect-ratio: 1;
+    object-fit: contain;
+    margin: 1rem;
+  }
+  #color-box {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .color {
+    color: transparent;
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 150ms ease-in-out;
+    font-size: 0.001rem;
+  }
+  .color:hover {
+    transform: translateY(-2px);
+  }
+  #color-name {
+    font-family: "Italianno", cursive;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  h1 {
+    font-family: "Italianno", cursive;
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  span {
+    color: #932f6d;
+    font-weight: 900;
+  }
+  label {
+    font-weight: 600;
+    cursor: pointer;
+  }
+  select {
+    font-weight: 400;
+    padding: 0.5rem 0;
+  }
+  button {
+    display: block;
+    background-color: #932f6d;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    transition: 150ms ease-in-out;
+    cursor: pointer;
+  }
+  button:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+  }
+  #description {
+    border-top: 1px solid #420039;
+    width: 80%;
+  }
+  h3 {
+    font-family: "Italianno", cursive;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+  }
+  #product-text {
+    letter-spacing: 1px;
+    line-height: 2rem;
+  }
+</style>
+
+<script>
+  function updateColorName(color) {
+    let colorName = document.getElementById("color-name");
+    if (colorName) colorName.innerHTML = color;
+  }
+  function updateImg(path) {
+    let img = document.getElementById("design");
+    img?.setAttribute("src", path);
+  }
+  function updateSelect(color) {
+    let options = document.querySelectorAll("#colorway option");
+    options.forEach((option) => {
+      if (option.innerHTML === color) option.selected = true;
+    });
+  }
+  const colorBoxes = document.querySelectorAll(".color");
+  colorBoxes.forEach((color) => {
+    color.addEventListener("mouseenter", (e) =>
+      updateColorName(color.innerHTML)
+    );
+    color.addEventListener("click", (e) => {
+      updateImg(color.getAttribute("data-path"));
+      updateSelect(color.getAttribute("data-design"));
+    });
+  });
+  const colorSelect = document.getElementById("colorway");
+  colorSelect?.addEventListener("change", (e) => {
+    updateColorName(colorSelect.value);
+    colorBoxes.forEach((color) => {
+      if (colorSelect.value === color.getAttribute("data-design"))
+        updateImg(color.getAttribute("data-path"));
+    });
+  });
+  const addToCart = document.getElementById("add-to-cart");
+  addToCart?.addEventListener("click", () => {
+    alert("Add To Cart not implemented on Demo Site.");
+  });
+</script>

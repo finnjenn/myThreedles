@@ -1,0 +1,32 @@
+---
+const { header } = Astro.props;
+---
+
+<section>
+  <h1>{header}</h1>
+  <div>
+    <slot />
+  </div>
+  <a href="/shopAll">View More</a>
+</section>
+<style>
+  div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  h1 {
+    text-align: center;
+    color: #420039;
+    font-family: "Italianno", cursive;
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  a {
+    display: block;
+    text-align: center;
+    color: #420039;
+    font-size: 1.1rem;
+    margin: 0 auto;
+  }
+</style>
