@@ -2,7 +2,7 @@
 const { design, img, price, path, banner } = Astro.props;
 ---
 
-<div id="product-container">
+<div id="product-container" class="home-io">
   <div id="img-container">
     <a href="/product">
       <img src={img} alt={design + "Design"} />
@@ -66,4 +66,28 @@ const { design, img, price, path, banner } = Astro.props;
     color: #932f6d;
     transform: translateY(-2px);
   }
+  .home-io {
+    opacity: 0;
+    transition: 600ms ease-in-out;
+  }
+  .show {
+    opacity: 1;
+  }
 </style>
+
+<script>
+  const products = document.querySelectorAll(".home-io");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("show", entry.isIntersecting);
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  products.forEach((p) => observer.observe(p));
+</script>
