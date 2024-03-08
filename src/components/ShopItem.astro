@@ -20,6 +20,13 @@ const { design, price, colorNum, img } = Astro.props;
     text-align: center;
     color: #420039;
     margin: 0 0.5rem;
+    transform: scale(0.75);
+    opacity: 0;
+    transition: 400ms ease-in-out;
+  }
+  .show {
+    transform: scale(1);
+    opacity: 1;
   }
   img {
     width: 18rem;
@@ -62,3 +69,18 @@ const { design, price, colorNum, img } = Astro.props;
     }
   }
 </style>
+
+<script>
+  const items = document.querySelectorAll('.item-box');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("show", entry.isIntersecting);
+    })
+  },
+  {
+    threshold: 0.5,
+  })
+
+  items.forEach(item => observer.observe(item))
+</script>
